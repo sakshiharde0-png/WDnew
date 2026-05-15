@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Marks</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .container {
+            width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: darkblue;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Student Marks List</h2>
+
+    <?php
+        // Associative array of students and marks
+        $students = [
+            "John" => ["Math" => 85, "Science" => 90, "English" => 78],
+            "Sarah" => ["Math" => 92, "Science" => 88, "English" => 95],
+            "David" => ["Math" => 75, "Science" => 80, "English" => 70]
+        ];
+
+        echo "<table>";
+        echo "<tr>
+                <th>Student Name</th>
+                <th>Math</th>
+                <th>Science</th>
+                <th>English</th>
+              </tr>";
+
+        foreach ($students as $name => $marks) {
+            echo "<tr>
+                    <td>$name</td>
+                    <td>{$marks['Math']}</td>
+                    <td>{$marks['Science']}</td>
+                    <td>{$marks['English']}</td>
+                  </tr>";
+        }
+
+        echo "</table>";
+    ?>
+
+</div>
+
+</body>
+</html>
