@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details</title>
+</head>
+<body>
+
+    <h1><u>Personal Details</u></h1>
+
+    <p>
+        <b>Name:</b> John Doe
+    </p>
+
+    <p>
+        <strong>Age:</strong> 22
+    </p>
+
+    <p>
+        <i>Profession:</i> Web Developer
+    </p>
+
+    <p>
+        <em>Hobby:</em> Reading and Coding
+    </p>
+
+    <p>
+        <mark>Favorite Color:</mark> Blue
+    </p>
+
+    <p>
+        <small>Email:</small> johndoe@example.com
+    </p>
+
+    <p>
+        H<sub>2</sub>O is water and x<sup>2</sup> is square of x.
+    </p>
+
+</body>
+</html>
