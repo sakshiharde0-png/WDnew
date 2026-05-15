@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: darkblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: green;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+
+            // Get form values
+            let username = document.getElementById("username").value;
+            let mobile = document.getElementById("mobile").value;
+            let password = document.getElementById("password").value;
+
+            // Clear previous error message
+            document.getElementById("error").innerHTML = "";
+
+            // Required field validation
+            if (username == "" || mobile == "" || password == "") {
+                document.getElementById("error").innerHTML =
+                    "All fields are required!";
+                return false;
+            }
+
+            // Mobile number validation
+            let mobilePattern = /^[0-9]{10}$/;
+
+            if (!mobile.match(mobilePattern)) {
+                document.getElementById("error").innerHTML =
+                    "Mobile number must contain exactly 10 digits!";
+                return false;
+            }
+
+            // Password length validation
+            if (password.length < 6) {
+                document.getElementById("error").innerHTML =
+                    "Password must be at least 6 characters long!";
+                return false;
+            }
+
+            // Success message
+            alert("Registration Successful!");
+
+            return true;
+        }
+    </script>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h2>Registration Form</h2>
+
+        <form onsubmit="return validateForm()">
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+
+            <p id="error" class="error"></p>
+
+            <input type="submit" value="Register">
+
+        </form>
+
+    </div>
+
+</body>
+</html>
