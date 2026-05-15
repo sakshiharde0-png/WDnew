@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP String Operations</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .container {
+            width: 400px;
+            margin: 60px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input, button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: darkblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>String Operations</h2>
+
+    <form method="POST">
+        <input type="text" name="text" placeholder="Enter a string" required>
+        <button type="submit">Process</button>
+    </form>
+
+    <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            $text = $_POST["text"];
+
+            $upper = strtoupper($text);
+            $lower = strtolower($text);
+            $count = str_word_count($text);
+
+            echo "<div class='result'>";
+            echo "Original String: $text <br><br>";
+            echo "Uppercase: $upper <br>";
+            echo "Lowercase: $lower <br>";
+            echo "Word Count: $count";
+            echo "</div>";
+        }
+    ?>
+
+</div>
+
+</body>
+</html>
