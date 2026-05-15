@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page Design</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        img {
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 70%;
+            background-color: white;
+        }
+
+        table, th, td {
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+
+        .nested-table {
+            width: 100%;
+            background-color: #fff8dc;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Sample Web Page</h1>
+
+    <!-- Image -->
+    <img src="https://via.placeholder.com/300"
+         alt="Sample Image"
+         width="300">
+
+    <p>
+        Visit 
+        <a href="https://www.google.com" target="_blank">
+            Google
+        </a>
+    </p>
+
+    <!-- Main Table -->
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Details</th>
+        </tr>
+
+        <tr>
+            <td>John</td>
+            <td>
+                <!-- Nested Table -->
+                <table class="nested-table">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                    </tr>
+
+                    <tr>
+                        <td>HTML</td>
+                        <td>85</td>
+                    </tr>
+
+                    <tr>
+                        <td>CSS</td>
+                        <td>90</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
