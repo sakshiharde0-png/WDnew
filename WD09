@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee & Server Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Employee Details</h2>
+
+    <?php
+        // Employee data (array)
+        $employees = [
+            ["id" => 101, "name" => "John", "designation" => "Manager", "salary" => 50000],
+            ["id" => 102, "name" => "Sarah", "designation" => "Developer", "salary" => 40000],
+            ["id" => 103, "name" => "David", "designation" => "Designer", "salary" => 35000]
+        ];
+
+        echo "<table>";
+        echo "<tr><th>ID</th><th>Name</th><th>Designation</th><th>Salary</th></tr>";
+
+        foreach ($employees as $emp) {
+            echo "<tr>
+                    <td>{$emp['id']}</td>
+                    <td>{$emp['name']}</td>
+                    <td>{$emp['designation']}</td>
+                    <td>{$emp['salary']}</td>
+                  </tr>";
+        }
+
+        echo "</table>";
+    ?>
+
+    <h2>Server Information</h2>
+
+    <?php
+        echo "<table>";
+        echo "<tr><th>Property</th><th>Value</th></tr>";
+
+        echo "<tr><td>Server Name</td><td>" . $_SERVER['SERVER_NAME'] . "</td></tr>";
+        echo "<tr><td>Server Software</td><td>" . $_SERVER['SERVER_SOFTWARE'] . "</td></tr>";
+        echo "<tr><td>Server Address</td><td>" . $_SERVER['SERVER_ADDR'] . "</td></tr>";
+        echo "<tr><td>Client IP</td><td>" . $_SERVER['REMOTE_ADDR'] . "</td></tr>";
+        echo "<tr><td>Request Method</td><td>" . $_SERVER['REQUEST_METHOD'] . "</td></tr>";
+
+        echo "</table>";
+    ?>
+
+</div>
+
+</body>
+</html>
